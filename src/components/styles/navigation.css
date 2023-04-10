@@ -4,3 +4,38 @@
   margin: 0 41.5rem 0 0;
   padding: 0.875rem;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  padding: 0 1rem;
+}
+
+.nav-links li:last-child {
+  border-left: 2px solid;
+  padding-right: 0;
+}
+
+.nav-link {
+  color: #2088ff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-position: under;
+}
