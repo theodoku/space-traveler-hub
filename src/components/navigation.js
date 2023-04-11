@@ -16,7 +16,7 @@ function Nav() {
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav-link" to="/missions">
+          <NavLink className="nav-link" to="/Missions">
             Missions
           </NavLink>
         </li>

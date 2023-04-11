@@ -1,13 +1,17 @@
-import { BrowserRouter as Router } from 'react-router-dom';
 import Nav from './components/navigation';
+import Missions from './components/missions';
 
 function App() {
   return (
-    <Router>
+    <div>
       <div className="App">
         <Nav />
+        <Missions />
       </div>
-    </Router>
+      {/* <Router>
+         <Route path="/Missions" component={Missions} />
+       </Router> */}
+    </div>
   );
 }
 
