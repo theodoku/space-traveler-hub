@@ -48,6 +48,6 @@ export default function Mission(props) {
 Mission.propTypes = {
   Mission: PropTypes.string.isRequired,
   Description: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
+  reserved: PropTypes.bool,
   id: PropTypes.string.isRequired,
 };
