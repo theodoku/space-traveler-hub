@@ -1,17 +1,21 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/navigation';
 import Missions from './components/missions';
+import Rockets from './Pages/Rockets';
 
 function App() {
   return (
-    <div>
-      <div className="App">
+    <BrowserRouter>
+      <header className="App">
         <Nav />
-        <Missions />
-      </div>
-      {/* <Router>
-         <Route path="/Missions" component={Missions} />
-       </Router> */}
-    </div>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Rockets />} />
+          <Route path="/missions" element={<Missions />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 
