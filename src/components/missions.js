@@ -27,6 +27,8 @@ export default function Missions() {
               <Mission
                 Mission={item.mission_name}
                 Description={item.description}
+                id={item.mission_id}
+                reserved={item.reserved}
               />
             </tr>
           ))}
