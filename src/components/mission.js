@@ -1,19 +1,50 @@
-import PropTypes from 'prop-types';
-import './styles/mission.css';
+import PropTypes from "prop-types";
+import "./styles/mission.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  reserveMission,
+  leaveMission,
+} from "../redux/missions/missionSlice";
 
 export default function Mission(props) {
-  const { Mission, Description } = props;
+  const dispatch = useDispatch();
+
+  const { Mission, Description, id ,reserved } = props;
   return (
     <>
       <td className="Mision_name">{Mission}</td>
       <td>{Description}</td>
-      <td>Not Member</td>
-      <td><button type="submit" className="button">Join Mission</button></td>
+      <td>
+        {reserved ? (
+          <span className="active-reserved"> Active Member </span>
+        ) : (
+          <span className="m-reserved">NOT A MEMBER </span>
+        )}
+      </td>
+      <td>
+        {reserved ? (
+          <button
+            type="submit"
+            className="button"
+            onClick={() => dispatch(leaveMission(id))}
+          >
+            Leave Mission
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="button"
+            onClick={() => dispatch(reserveMission(id))}
+          >
+            Join Mission
+          </button>
+        )}
+      </td>
     </>
   );
 }
 Mission.propTypes = {
   Mission: PropTypes.string.isRequired,
   Description: PropTypes.string.isRequired,
-  // id: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
