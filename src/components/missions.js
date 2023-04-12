@@ -1,15 +1,38 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getMission } from '../redux/missions/missionSlice';
+import Mission from './mission';
+import './styles/mission.css';
 
 export default function Missions() {
-  // const { mission } = useSelector((state) => state.mission);
+  const { mission } = useSelector((state) => state.mission);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMission());
   }, [dispatch]);
   return (
-    <div>hello</div>
+    <div>
+      <table className="table-mission">
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status </th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          {mission.map((item) => (
+            <tr key={item.mission_id}>
+              <Mission
+                Mission={item.mission_name}
+                Description={item.description}
+              />
+            </tr>
+          ))}
+        </tbody>
 
+      </table>
+    </div>
   );
 }
