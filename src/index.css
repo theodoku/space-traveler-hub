@@ -8,3 +8,63 @@ body {
 .App {
   align-items: center;
 }
+
+.rockets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.rocket {
+  display: flex;
+  gap: 2rem;
+}
+
+.rocket-img {
+  box-shadow: 2px 2px 8px 2px #acabab;
+  width: 30%;
+}
+
+.rocket-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rocket-name {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.rocket-des {
+  font-weight: inherit;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+  line-height: 1.8rem;
+}
+
+.reserve-tag {
+  font-size: 0.95rem;
+  line-height: initial;
+  color: #fff;
+  background-color: #18a2b8;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-right: 0.8rem;
+}
+
+.rocket-reserve-btn {
+  font-size: 0.95rem;
+  color: #fff;
+  background-color: #007bff;
+  border: 1.8px solid #007bff;
+  border-radius: 4px;
+  padding: 9px 14px;
+  width: fit-content;
+}
+
+.reserved {
+  color: #767676;
+  border: 1.8px solid #767676;
+  background-color: #fff;
+  cursor: not-allowed;
+}

@@ -8,7 +8,7 @@ const initialState = {
   isLoading: false,
 };
 
-const getRockets = createAsyncThunk('rockets/fetchRockets', async () => {
+export const getRockets = createAsyncThunk('rockets/fetchRockets', async () => {
   try {
     const resp = await axios.get(URL);
     const { data } = resp;
@@ -16,13 +16,37 @@ const getRockets = createAsyncThunk('rockets/fetchRockets', async () => {
       id: rocket.rocket_id,
       name: rocket.rocket_name,
       description: rocket.description,
-      image: rocket.flicker_images[0],
+      image: rocket.flickr_images[0],
       reserved: false,
     }));
   } catch (error) {
     return error.message;
   }
 });
+
+export const reserveRocket = createAsyncThunk(
+  'rockets/reserveRocket',
+  async (id) => {
+    try {
+      await axios.post(`${URL}/${id}/reserve`);
+      return id;
+    } catch (error) {
+      return error.message;
+    }
+  },
+);
+
+export const cancelReservation = createAsyncThunk(
+  'rockets/cancelReservation',
+  async (id) => {
+    try {
+      await axios.delete(`${URL}/${id}/reservations`);
+      return id;
+    } catch (error) {
+      return error.message;
+    }
+  },
+);
 
 const rocketsSlice = createSlice({
   name: 'rockets',
@@ -37,23 +61,33 @@ const rocketsSlice = createSlice({
         isLoading: false,
         rockets: action.payload,
       }))
-      .addCase(rocketsSlice.actions.reserveRocket, (state, action) => {
-        const updatedRockets = state.rockets.map((rocket) => {
-          if (rocket.id === action.payload) {
-            return { ...rocket, reserved: true };
-          }
-          return rocket;
-        });
-        return { ...state, rockets: updatedRockets };
+      .addCase(reserveRocket.fulfilled, (state, action) => {
+        const rocket = state.rockets.find(
+          (rocket) => rocket.id === action.payload,
+        );
+        if (rocket) {
+          return {
+            ...state,
+            rockets: state.rockets.map((rocket) => (rocket.id === action.payload
+              ? { ...rocket, reserved: true }
+              : rocket)),
+          };
+        }
+        return state;
       })
-      .addCase(rocketsSlice.actions.cancelReservation, (state, action) => {
-        const updatedRockets = state.rockets.map((rocket) => {
-          if (rocket.id === action.payload) {
-            return { ...rocket, reserved: false };
-          }
-          return rocket;
-        });
-        return { ...state, rockets: updatedRockets };
+      .addCase(cancelReservation.fulfilled, (state, action) => {
+        const rocket = state.rockets.find(
+          (rocket) => rocket.id === action.payload,
+        );
+        if (rocket) {
+          return {
+            ...state,
+            rockets: state.rockets.map((rocket) => (rocket.id === action.payload
+              ? { ...rocket, reserved: false }
+              : rocket)),
+          };
+        }
+        return state;
       });
   },
 });
