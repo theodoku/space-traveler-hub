@@ -51,3 +51,7 @@ Mission.propTypes = {
   reserved: PropTypes.bool,
   id: PropTypes.string.isRequired,
 };
+
+Mission.defaultProps = {
+  reserved: false,
+};

@@ -1,8 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { leaveMission } from '../redux/missions/missionSlice';
-export default function ProfileMission ({mission}){
-    const dispatch = useDispatch();
+
+export default function ProfileMission({ mission }) {
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -19,9 +20,9 @@ export default function ProfileMission ({mission}){
 }
 
 ProfileMission.propTypes = {
-    mission: PropTypes.shape({
-      mission_id: PropTypes.string,
-      mission_name: PropTypes.string,
-      reserved: PropTypes.bool,
-    }).isRequired,
-  };
+  mission: PropTypes.shape({
+    mission_id: PropTypes.string,
+    mission_name: PropTypes.string,
+    reserved: PropTypes.bool,
+  }).isRequired,
+};

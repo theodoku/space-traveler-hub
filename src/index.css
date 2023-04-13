@@ -66,5 +66,5 @@ body {
   color: #767676;
   border: 1.8px solid #767676;
   background-color: #fff;
-  cursor: not-allowed;
+  cursor: pointer;
 }
