@@ -13,10 +13,8 @@ nav {
   background-color: #fff;
   box-sizing: border-box;
   padding: 0.2rem 5%;
-  position: fixed;
   width: 100%;
-  z-index: 2;
-  top: 0;
+  margin-bottom: 10px;
 }
 
 .nav-links {

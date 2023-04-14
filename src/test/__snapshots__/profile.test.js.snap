@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing the profile should match snapshot 1`] = `
+<ProfileMission
+  mission={
+    Object {
+      "description": "Test  description",
+      "mission_id": "1",
+      "mission_name": "Test ",
+      "reserved": true,
+    }
+  }
+/>
+`;

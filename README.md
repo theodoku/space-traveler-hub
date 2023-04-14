@@ -159,7 +159,9 @@ This project can be used to practice React & Redux.
 - LinkedIn: [Theophilus Doku](https://www.linkedin.com/in/theophilus-doku/)
 
 👤 **Ilyass**
-
+- GitHub: [@ilyassatlass](https://github.com/ilyassatlass)
+- Twitter: [@ilyass_atlassi](https://twitter.com/ilyass_atlassi)
+- LinkedIn: [Ilyass Atlassi](https://www.linkedin.com/in/ilyassatlassi/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
