@@ -77,3 +77,48 @@ body {
   width: fit-content;
   cursor: pointer;
 }
+
+.reserved-rockets-table {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    position: initial;
+    padding: 1rem;
+  }
+
+  .logo {
+    border-bottom: 1px solid;
+    padding-bottom: 0.5rem;
+  }
+
+  .logo-title {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    align-items: center;
+    margin-bottom: 0.3rem;
+  }
+
+  main {
+    margin: 2.5rem 1rem;
+  }
+
+  .rocket {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .rocket-img {
+    width: 100%;
+  }
+
+  .rocket-name {
+    margin-bottom: 0;
+  }
+}
