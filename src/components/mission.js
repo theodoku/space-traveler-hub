@@ -16,7 +16,7 @@ export default function Mission(props) {
     <>
       <td className="Mision_name">{Mission}</td>
       <td>{Description}</td>
-      <td className='status'>
+      <td className="status">
         {reserved ? (
           <span className="active-reserved"> Active Member </span>
         ) : (

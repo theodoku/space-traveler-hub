@@ -5,7 +5,7 @@ import Mission from './mission';
 import './styles/mission.css';
 
 export default function Missions() {
-  const  {mission}  = useSelector((state) => state.mission);
+  const { mission } = useSelector((state) => state.mission);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMission());

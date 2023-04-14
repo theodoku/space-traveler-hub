@@ -30,9 +30,9 @@ const missionSlice = createSlice({
   initialState,
   reducers: {
     missionAdded(state, action) {
-      console.log(action)
+      console.log(action);
       const newArr = state.mission.concat(action.payload);
-      console.log(newArr)
+      console.log(newArr);
       return { ...state, mission: newArr };
     },
     reserveMission(state, action) {
