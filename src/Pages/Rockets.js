@@ -1,53 +1,55 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  getRockets,
+  fetchRockets,
   reserveRocket,
-  cancelReservation,
+  cancelReserve,
 } from '../redux/rockets/rocketsSlice';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  const rockets = useSelector((state) => state.rockets.rockets);
+  const rockets = useSelector((state) => state.rockets);
 
-  const handleReserve = (id) => {
-    dispatch(reserveRocket(id));
+  const handleReserveRocket = (rocketId, rocketName) => {
+    dispatch(reserveRocket(rocketId, rocketName));
   };
 
-  const handleCancelReservation = (id) => {
-    dispatch(cancelReservation(id));
+  const handleCancelReserve = (rocketId) => {
+    dispatch(cancelReserve(rocketId));
   };
 
   useEffect(() => {
-    dispatch(getRockets());
+    dispatch(fetchRockets());
   }, [dispatch]);
 
   return (
     <section className="rockets-container">
       {rockets.map((rocket) => (
         <li className="rocket" key={rocket.id}>
-          <img className="rocket-img" src={rocket.image} alt={rocket.name} />
+          <img className="rocket-img" src={rocket.flickr_images} alt={rocket.name} />
           <article className="rocket-info">
             <h2 className="rocket-name">{rocket.name}</h2>
             <p className="rocket-des">
-              {rocket.reserved && <span className="reserve-tag">Reserved</span>}
+              {rocket.reserved ? (
+                <span className="reserve-tag">Reserved</span>
+              ) : null}
               {rocket.description}
             </p>
             {rocket.reserved ? (
               <button
-                className="rocket-reserve-btn reserved"
                 type="button"
-                onClick={() => handleCancelReservation(rocket.id)}
+                className="rocket-reserve-btn"
+                onClick={() => handleCancelReserve(rocket.id, rocket.name)}
               >
-                Cancel Reservation
+                cancel Reservation
               </button>
             ) : (
               <button
-                className="rocket-reserve-btn"
                 type="button"
-                onClick={() => handleReserve(rocket.id)}
+                className="reserved"
+                onClick={() => handleReserveRocket(rocket.id, rocket.name)}
               >
-                Reserve Rocket
+                Reserve rocket
               </button>
             )}
           </article>
