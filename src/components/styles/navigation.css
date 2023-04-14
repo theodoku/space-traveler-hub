@@ -1,7 +1,18 @@
+.logo {
+  display: flex;
+}
+
 .logo img {
   width: 2.813rem;
   height: 2.813rem;
   padding: 0.875rem;
+}
+
+.logo p {
+  height: 2.813rem;
+  padding: 0.875rem;
+  font-size: large;
+  font-weight: bold;
 }
 
 nav {
@@ -20,7 +31,7 @@ nav {
 .nav-links {
   display: flex;
   list-style: none;
-  padding: 0;
+  height: 2.813rem;
   padding: 0.875rem;
 }
 
@@ -28,9 +39,9 @@ nav {
   padding: 0 1rem;
 }
 
-.nav-links li:last-child {
-  border-left: 2px solid;
-  padding-right: 0;
+hr {
+  color: black;
+  height: 15px;
 }
 
 .nav-link {

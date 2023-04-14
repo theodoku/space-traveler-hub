@@ -23,12 +23,6 @@ const missionSlice = createSlice({
   name: 'mission',
   initialState,
   reducers: {
-    // missionAdded(state, action) {
-    //   console.log(action);
-    //   const newArr = state.mission.concat(action.payload);
-    //   console.log(newArr);
-    //   return { ...state, mission: newArr };
-    // },
     reserveMission(state, action) {
       const id = action.payload;
       const newArr = state.mission.map((item) => {
