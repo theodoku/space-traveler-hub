@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import ProfileMission from './ProfileMisison';
 import './styles/profile.css';
-import RocketsProfile from '../Pages/RocketsProfile';
 
 export default function Profile() {
   const { mission, isLoading } = useSelector((state) => state.mission);
