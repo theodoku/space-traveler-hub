@@ -26,3 +26,35 @@ tr:nth-child(odd) {
 .Mision_name {
   font-weight: bold;
 }
+
+.button-active {
+  color: red;
+  font-size: large;
+  border-color: red;
+  padding: 10px;
+}
+
+.button-desactive {
+  padding: 10px;
+  font-size: large;
+}
+
+.m-reserved {
+  background-color: gray;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px;
+  font-size: smaller;
+}
+
+.active-reserved {
+  background-color: #0b867e;
+  border-radius: 5px;
+  font-size: medium;
+  color: #fff;
+  padding: 5px;
+}
+
+.status {
+  width: 10%;
+}

@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
 import ProfileMission from './ProfileMisison';
+import './styles/profile.css'
 
 export default function Profile() {
   const { mission, isLoading } = useSelector((state) => state.mission);
   return (
-    <div className="main-container">
-      <div className="content">
+    <div className="container">
+      <div className="Task">
         <h2>My Missions</h2>
         <p id="mission-not-taken" />
         {mission && mission.find((item) => 'reserved' in item && item.reserved === true) ? (
