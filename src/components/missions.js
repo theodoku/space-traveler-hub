@@ -22,7 +22,7 @@ export default function Missions() {
           </tr>
         </thead>
         <tbody>
-          {mission.map((item) => (
+          {mission && mission.map((item) => (
             <tr key={item.mission_id}>
               <Mission
                 Mission={item.mission_name}
