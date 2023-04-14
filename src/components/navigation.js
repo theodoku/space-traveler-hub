@@ -8,6 +8,7 @@ function Nav() {
     <nav>
       <div className="logo">
         <img src={logo} alt="logo" />
+        <p>Space Travelers Hub</p>
       </div>
       <ul className="nav-links">
         <li>
@@ -20,6 +21,7 @@ function Nav() {
             Missions
           </NavLink>
         </li>
+        <hr />
         <li>
           <NavLink className="nav-link" to="/profile">
             My Profile

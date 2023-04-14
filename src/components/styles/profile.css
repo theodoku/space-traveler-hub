@@ -6,9 +6,16 @@
 
 .Task {
   display: flex;
-  align-items: center;
-  flex-direction: column;
   width: 100%;
+  gap: 10px;
+}
+
+.my-mission {
+  width: 50%;
+}
+
+.my-rocket {
+  width: 50%;
 }
 
 .content > h2 {
@@ -21,11 +28,8 @@
   align-self: baseline;
 }
 
-.item {
-  border: 1px solid #4e4b4b6e;
-
-  /* width: 100%; */
-  padding: 2% 4%;
+.h2 {
+  padding-left: 20px;
 }
 
 .Mision_name {

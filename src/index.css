@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 1rem;
+  padding: 3rem;
 }
 
 .rocket {
@@ -78,7 +78,6 @@ body {
 .reserved-rockets-table {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
 }
 
 @media screen and (max-width: 768px) {

@@ -8,22 +8,26 @@ export default function Profile() {
   return (
     <div className="container">
       <div className="Task">
-        <h2>My Missions</h2>
-        <p id="mission-not-taken" />
-        {mission
-        && mission.find((item) => 'reserved' in item && item.reserved === true) ? (
-            mission.map(
-              (item) => item.reserved && (
+        <div className="my-mission">
+          <h2 className="h2">My Missions</h2>
+          <p id="mission-not-taken" />
+          {mission
+         && mission.find((item) => 'reserved' in item && item.reserved === true) ? (
+              mission.map(
+                (item) => item.reserved && (
                 <div key={item.mission_id} className="item">
                   <ProfileMission mission={item} />
                 </div>
-              ),
-            )
-          ) : (
-            <div>No Missions Taken</div>
-          )}
-        {isLoading && <div>Loading...</div>}
-        <RocketsProfile />
+                ),
+              )
+            ) : (
+              <div>No Missions Taken</div>
+            )}
+        </div>
+        <div className="my-rocket">
+          {isLoading && <div>Loading...</div>}
+          <RocketsProfile />
+        </div>
       </div>
     </div>
   );
