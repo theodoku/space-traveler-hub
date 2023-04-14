@@ -5,7 +5,7 @@ import Mission from './mission';
 import './styles/mission.css';
 
 export default function Missions() {
-  const  mission  = useSelector((state) => state.mission);
+  const  {mission}  = useSelector((state) => state.mission);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMission());
@@ -22,7 +22,7 @@ export default function Missions() {
           </tr>
         </thead>
         <tbody>
-          {mission.map((item) => (
+          {mission && mission.map((item) => (
             <tr key={item.mission_id}>
               <Mission
                 Mission={item.mission_name}

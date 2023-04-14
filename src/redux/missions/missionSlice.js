@@ -7,6 +7,12 @@ export const getMission = createAsyncThunk('mission/getMission', async () => {
   try {
     const resp = await axios.get(url);
     const { data } = resp;
+    // const data = await resp.data.map((item) => ({
+    //   mission_id: item.mission_id,
+    //   mission_name: item.mission_name,
+    //   description: item.description,
+    // }));
+    // dispatch(missionAdded(data));
     return data;
   } catch (error) {
     return error.message;
@@ -24,7 +30,9 @@ const missionSlice = createSlice({
   initialState,
   reducers: {
     missionAdded(state, action) {
+      console.log(action)
       const newArr = state.mission.concat(action.payload);
+      console.log(newArr)
       return { ...state, mission: newArr };
     },
     reserveMission(state, action) {

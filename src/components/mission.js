@@ -16,7 +16,7 @@ export default function Mission(props) {
     <>
       <td className="Mision_name">{Mission}</td>
       <td>{Description}</td>
-      <td>
+      <td className='status'>
         {reserved ? (
           <span className="active-reserved"> Active Member </span>
         ) : (
@@ -27,7 +27,7 @@ export default function Mission(props) {
         {reserved ? (
           <button
             type="submit"
-            className="button"
+            className="button-active"
             onClick={() => dispatch(leaveMission(id))}
           >
             Leave Mission
@@ -35,7 +35,7 @@ export default function Mission(props) {
         ) : (
           <button
             type="submit"
-            className="button"
+            className="button-desactive"
             onClick={() => dispatch(reserveMission(id))}
           >
             Join Mission
