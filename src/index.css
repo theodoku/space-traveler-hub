@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Ubuntu&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+  align-items: center;
+}
+
+.rockets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem;
+}
+
+.rocket {
+  display: flex;
+  gap: 2rem;
+}
+
+.rocket-img {
+  box-shadow: 2px 2px 8px 2px #acabab;
+  width: 30%;
+}
+
+.rocket-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rocket-name {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.rocket-des {
+  font-weight: inherit;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+  line-height: 1.8rem;
+}
+
+.reserve-tag {
+  font-size: 0.95rem;
+  line-height: initial;
+  color: #fff;
+  background-color: #18a2b8;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-right: 0.8rem;
+}
+
+.rocket-reserve-btn {
+  font-size: 0.95rem;
+  color: black;
+  background-color: #fff;
+  border: 1.8px solid black;
+  border-radius: 4px;
+  padding: 9px 14px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.reserved {
+  font-size: 0.95rem;
+  color: #fff;
+  background-color: #007bff;
+  border: 1.8px solid #007bff;
+  border-radius: 4px;
+  padding: 9px 14px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.reserved-rockets-table {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    position: initial;
+    padding: 1rem;
+  }
+
+  .logo {
+    border-bottom: 1px solid;
+    padding-bottom: 0.5rem;
+  }
+
+  .logo-title {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    align-items: center;
+    margin-bottom: 0.3rem;
+  }
+
+  main {
+    margin: 2.5rem 1rem;
+  }
+
+  .rocket {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .rocket-img {
+    width: 100%;
+  }
+
+  .rocket-name {
+    margin-bottom: 0;
+  }
+}
