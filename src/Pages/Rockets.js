@@ -20,7 +20,7 @@ const Rockets = () => {
 
   useEffect(() => {
     dispatch(fetchRockets());
-  }, [dispatch]);
+  }, []);
 
   return (
     <section className="rockets-container">

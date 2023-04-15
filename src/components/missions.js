@@ -9,7 +9,7 @@ export default function Missions() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMission());
-  }, [dispatch]);
+  }, []);
   return (
     <div>
       <table className="table-mission">
